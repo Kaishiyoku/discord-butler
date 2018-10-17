@@ -5,11 +5,20 @@ const client = new Discord.Client();
 const config = JSON.parse(fs.readFileSync('config.json'));
 const commandPrefix = '~';
 const commands = {
-    ping: 'ping',
+    status: {
+        name: 'status',
+        fn: (message) => {
+            message.channel.send('Up and running.');
+        },
+    },
 };
 
-function getCommand(command) {
-    return `${commandPrefix}${commands[command]}`;
+function getCommandName(command) {
+    return `${commandPrefix}${commands[command].name}`;
+}
+
+function getCommandFn(command) {
+    return commands[command].fn;
 }
 
 client.on('ready', () => {
@@ -17,10 +26,8 @@ client.on('ready', () => {
 });
 
 client.on('message', (message) => {
-    console.log(message);
-
-    if (message.content === getCommand('ping')) {
-        message.channel.send('Pong.');
+    if (message.content === getCommandName('status')) {
+        getCommandFn('status')(message);
     }
 });
 

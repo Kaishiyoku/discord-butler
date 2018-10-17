@@ -1,10 +1,10 @@
 {
-  "name": "kaishiyoku-discord-test-bot",
+  "name": "discord-butler",
   "version": "1.0.0",
   "description": "A simple test bot for Discord witten in JavaScript.",
-  "main": "dist/kaishiyoku-test-bot.cjs.js",
-  "module": "dist/kaishiyoku-test-bot.esm.js",
-  "browser": "dist/kaishiyoku-test-bot.umd.js",
+  "main": "dist/discord-butler.cjs.js",
+  "module": "dist/discord-butler.esm.js",
+  "browser": "dist/discord-butler.umd.js",
   "scripts": {
     "lint": "eslint ./src ./scripts --ext .js",
     "build:clean": "babel-node --presets es2015 scripts/cleanup-build-dir.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kaishiyoku/discord-test-bot.git"
+    "url": "git+https://github.com/Kaishiyoku/discord-butler.git"
   },
   "author": {
     "name": "Andreas Wiedel",
@@ -29,9 +29,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kaishiyoku/discord-test-bot/issues"
+    "url": "https://github.com/Kaishiyoku/discord-butler/issues"
   },
-  "homepage": "https://github.com/Kaishiyoku/discord-test-bot#readme",
+  "homepage": "https://github.com/Kaishiyoku/discord-butler#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "6.26.3",
@@ -85,8 +85,7 @@
       "FAKE_SERVER": false
     },
     "setupFiles": [
-      "<rootDir>/__mocks__/consoleMock.js",
-      "<rootDir>/__mocks__/localStorageMock.js"
+
     ],
     "transform": {
       "^.+\\.js$": "babel-jest",
